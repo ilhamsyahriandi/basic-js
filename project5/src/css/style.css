@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+
+    html {
+        @apply box-border bg-[#5e1ca0] text-xl font-extralight;
+
+        font-family: 'helvetica neue';
+
+    }
+
+    body {
+        @apply m-0;
+    }
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+      }
+
+
+    
+}
+
+@layer components{
+
+    .panels {
+        @apply min-h-screen overflow-hidden flex;
+    }
+
+    .panel{
+        @apply bg-[#6b0f9c] shadow-[inset_0px_0px_0px_5px_rgba(255,255,255,0.1)]
+        text-white text-center flex items-center text-xl bg-cover bg-center flex-[1]
+        justify-center flex-col duration-75; 
+
+        transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.2s;
+    }
+
+    .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
+    .panel2 { background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500); }
+    .panel3 { background-image:url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d); }
+    .panel4 { background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500); }
+    .panel5 { background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500); }
+
+    .panel > *:first-child { transform: translateY(-100%); }
+    .panel.open-active > *:first-child { transform: translateY(0); }
+    .panel > *:last-child { transform: translateY(100%); }
+    .panel.open-active > *:last-child { transform: translateY(0); }
+
+    .panel p {
+        @apply uppercase text-[2em] font-amatic;
+
+        text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+    }
+
+    .panel > * {
+        @apply m-0 w-full transform duration-500 flex-[1_0_auto] flex justify-center items-center;
+    }
+
+    .panel p:nth-child(2) {
+        @apply text-[4em];
+    }
+
+    .panel.open {
+        @apply text-[40px] flex-[5];
+    }
+
+    @media only screen and (max-width: 600px) {
+        .panel p {
+            @apply text-[1em];
+        }
+      }
+
+}

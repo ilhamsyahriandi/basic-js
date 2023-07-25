@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+
+   img {
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+   }
+
+   body {
+    @apply text-center bg-[#5e1ca0] text-white font-thin text-[50px] flex flex-col justify-center min-h-screen;
+
+    font-family: 'helvetica neue', sans-serif;
+   }
+
+   input {
+    @apply w-[100px];
+   }
+    
+}
+
+@layer components{
+
+    .hl {
+        color: var(--base);
+    }
+
+    .controls {
+        @apply mb-[50px];
+    }
+
+}
